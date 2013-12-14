@@ -2,7 +2,14 @@ module.exports = (grunt) ->
   'use strict'
 
   require('load-grunt-tasks')(grunt)
+  semver = require 'semver'
   
+  pkg = grunt.file.readJSON 'package.json'
+  
+  getNextVersion = ->
+    currentVer = pkg.version
+    semver.inc currentVer, 'patch'
+      
   grunt.initConfig
     jshint:
       options:
@@ -19,6 +26,17 @@ module.exports = (grunt) ->
         files: ['uglify-save-license.js']
         tasks: ['jshint']
     
+    replace:
+      main:
+        options:
+          prefix: 'v'
+          patterns: [
+            match: pkg.version
+            replacement: "v#{ getNextVersion() }"
+          ]
+        files:
+          'uglify-save-license.js': ['uglify-save-license.js']
+    
     release:
       options: {}
 
@@ -29,5 +47,5 @@ module.exports = (grunt) ->
   
   grunt.task.registerTask 'default', defaultTasks
 
-  grunt.task.registerTask 'publish', ['jshint', 'release:patch']
-  
+  grunt.task.registerTask 'publish', ->
+    grunt.task.run ['replace', 'jshint', 'release:patch']

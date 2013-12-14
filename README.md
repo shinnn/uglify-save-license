@@ -1,10 +1,10 @@
 # uglify-save-license
 
-Tiny license detector module for UglifyJS's 'comments' option
+Tiny license detector module for UglifyJS's `comments` option
 
 ## Installation
 
-Install latest stable Node and run this command: in your project directory:
+Install latest stable Node and run this command in the root of your project directory:
 
 ```
 npm install --save-dev uglify-save-license
@@ -12,13 +12,18 @@ npm install --save-dev uglify-save-license
 
 ## Usage
 
-Coming soon.
+### Use with [UglifyJS 2](https://github.com/mishoo/UglifyJS2)
+
+
+
+### Use with [grunt-contrib-uglify](https://github.com/gruntjs/grunt-contrib-uglify)
+
 
 ## Example
 
-### use with `grunt-contrib-uglify`
+### Gruntfile example
 
-```
+```coffeescript
 module.exports = (grunt) ->
   'use strict'
 
