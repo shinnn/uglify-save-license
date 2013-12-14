@@ -1,0 +1,36 @@
+{
+  "name": "uglify-save-license",
+  "version": "0.0.0",
+  "description": "Tiny license detector module for UglifyJS's 'comments' option",
+  "main": "uglify-save-license.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shinnn/uglify-save-license.git"
+  },
+  "author": {
+    "name": "Shinnosuke Watanabe",
+    "url": "https://github.com/shinnn"
+  },
+  "readmeFilename": "README.md",
+  "license": "MIT",
+  "keywords": [
+    "uglify",
+    "compression",
+    "comment",
+    "license"
+  ],
+  "bugs": {
+    "url": "https://github.com/shinnn/uglify-save-license/issues"
+  },
+  "homepage": "https://github.com/shinnn/uglify-save-license",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "load-grunt-tasks": "~0.2.0",
+    "grunt-contrib-jshint": "~0.7.2",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-release": "~0.6.0"
+  }
+}
