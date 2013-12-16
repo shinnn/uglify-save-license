@@ -1,10 +1,18 @@
 # uglify-save-license
 
+[![NPM version](https://badge.fury.io/js/uglify-save-license.png)](http://badge.fury.io/js/uglify-save-license)
+[![Build Status](https://travis-ci.org/shinnn/uglify-save-license.png?branch=master)](https://travis-ci.org/shinnn/uglify-save-license)
+[![devDependency Status](https://david-dm.org/shinnn/uglify-save-license/dev-status.png)](https://david-dm.org/shinnn/uglify-save-license#info=devDependencies)
+
 Tiny license detector module for UglifyJS's `comments` option
+
+## Concepts
+
+Coming soon.
 
 ## Installation
 
-Install latest stable Node and run this command in the root of your project directory:
+Install latest stable [Node](http://nodejs.org/) and run this command in your project's root directory:
 
 ```
 npm install --save-dev uglify-save-license
@@ -12,16 +20,25 @@ npm install --save-dev uglify-save-license
 
 ## Usage
 
-### Use with [UglifyJS 2](https://github.com/mishoo/UglifyJS2)
+### Use with [UglifyJS](https://github.com/mishoo/UglifyJS2)
 
-
+Coming soon.
 
 ### Use with [grunt-contrib-uglify](https://github.com/gruntjs/grunt-contrib-uglify)
 
+Coming soon.
+
+## How does it works
+
+Coming soon.
 
 ## Example
 
-### Gruntfile example
+### CLI tool example
+
+Coming soon.
+
+### [Gruntfile](http://gruntjs.com/getting-started#the-gruntfile) example
 
 ```coffeescript
 module.exports = (grunt) ->

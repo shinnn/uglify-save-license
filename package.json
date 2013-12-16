@@ -1,10 +1,10 @@
 {
   "name": "uglify-save-license",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "Tiny license detector module for UglifyJS's 'comments' option",
   "main": "uglify-save-license.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node_modules/grunt-cli/bin/grunt test"
   },
   "repository": {
     "type": "git",
@@ -32,7 +32,10 @@
     "grunt-contrib-jshint": "~0.7.2",
     "grunt-contrib-watch": "~0.5.3",
     "grunt-release": "~0.6.0",
+    "grunt-replace": "~0.5.1",
     "semver": "~2.2.1",
-    "grunt-replace": "~0.5.1"
+    "grunt-contrib-uglify": "~0.2.7",
+    "grunt-contrib-nodeunit": "~0.2.2",
+    "grunt-cli": "~0.1.11"
   }
 }
