@@ -60,15 +60,11 @@ module.exports = (grunt) ->
 
   grunt.registerTask 'test', [
     'jshint'
-    'nodeunit'
-  ]
-
-  grunt.registerTask 'build', [
-    'replace'
-    'jshint'
     'uglify'
     'nodeunit'
   ]
+
+  grunt.registerTask 'build', ['replace', 'test']
   
   grunt.registerTask 'default', ['build', 'watch']
 
