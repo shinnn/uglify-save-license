@@ -1,4 +1,4 @@
-// uglify-save-license.js v0.1.0
+// uglify-save-license.js v0.1.1
 // Copyright (c) 2013 Shinnosuke Watanabe
 // Licensed uder the MIT license
 
@@ -9,21 +9,18 @@ var licenseRegexp = /^\!|^@preserve|^@cc_on|\bMIT\b|\bMPL\b|\bGPL\b|\(c\)|Licens
 
 // number of line where license comment appeared last
 var prevCommentLine = 0;
+// name of the file minified last
 var prevFile = '';
 
 module.exports = function saveLicense(node, comment) {
-  var result = false;
-
   if(comment.file !== prevFile) {
     prevCommentLine = 0;
   }
 
   // check if the comment contains license text
-  if (licenseRegexp.test(comment.value) ||
+  var result = licenseRegexp.test(comment.value) ||
       comment.line === 1 ||
-      comment.line === prevCommentLine + 1) {
-    result = true;
-  }
+      comment.line === prevCommentLine + 1;
   
   if (result) {
     // if the comment contains license, save line number
@@ -32,8 +29,9 @@ module.exports = function saveLicense(node, comment) {
     // if the comment doesn't contain license, reset line number
     prevCommentLine = 0;
   }
-
+  
+  // save current filename
   prevFile = comment.file;
-
+  
   return result;
 };

@@ -55,22 +55,13 @@ module.exports = (grunt) ->
     release:
       options: {}
 
-  defaultTasks = [
+  grunt.registerTask 'build', [
     'replace'
     'jshint'
     'uglify'
-    'nodeunit'    
-    'watch'
+    'nodeunit'
   ]
   
-  grunt.task.registerTask 'test', [
-    'replace'
-    'jshint'
-    'uglify'
-    'nodeunit'    
-  ]
-  
-  grunt.task.registerTask 'default', defaultTasks
+  grunt.registerTask 'default', ['build', 'watch']
 
-  grunt.task.registerTask 'publish', ->
-    grunt.task.run ['test', 'release:patch']
+  grunt.registerTask 'publish', ['build', 'release:patch']
