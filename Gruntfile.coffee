@@ -20,6 +20,9 @@ module.exports = (grunt) ->
       main:
         files:
           src: ['uglify-save-license.js']
+      test:
+        files:
+          src: ['test/*.js']
     
     watch:
       main:
@@ -54,6 +57,11 @@ module.exports = (grunt) ->
     
     release:
       options: {}
+
+  grunt.registerTask 'test', [
+    'jshint'
+    'nodeunit'
+  ]
 
   grunt.registerTask 'build', [
     'replace'
