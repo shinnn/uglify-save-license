@@ -4,35 +4,59 @@
 [![Build Status](https://travis-ci.org/shinnn/uglify-save-license.png?branch=master)](https://travis-ci.org/shinnn/uglify-save-license)
 [![devDependency Status](https://david-dm.org/shinnn/uglify-save-license/dev-status.png)](https://david-dm.org/shinnn/uglify-save-license#info=devDependencies)
 
-Tiny license detector module for UglifyJS's `comments` option
-
-## Concepts
-
-Coming soon.
+Tiny license detector module for the `comments` option of UglifyJS
 
 ## Installation
 
-Install latest stable [Node](http://nodejs.org/) and run this command in your project's root directory:
+Install [Node](http://nodejs.org/) and run this command in the root of your project:
 
 ```
-npm install --save-dev uglify-save-license
+npm install uglify-save-license
 ```
 
 ## Usage
 
+First of all, load the `uglify-save-license` module.
+
+```javacript
+var saveLicense = require('uglify-save-license');
+```
+
 ### Use with [UglifyJS](https://github.com/mishoo/UglifyJS2)
 
-Coming soon.
+Pass this module to the [`comments` option](https://github.com/mishoo/UglifyJS2#keeping-comments-in-the-output).
+
+```javascript
+var result = UglifyJS.minify('file1.js', {
+  output: {
+    comments: saveLicense
+  }
+});
+```
 
 ### Use with [grunt-contrib-uglify](https://github.com/gruntjs/grunt-contrib-uglify)
 
-Coming soon.
+Pass this module to the [`preserveComments` option](https://github.com/gruntjs/grunt-contrib-uglify#preservecomments).
+
+```javascript
+grunt.initConfig({
+  uglify: {
+    my_target: {
+      options: {
+        preserveComments: saveLicense
+      },    
+      src: ['src/**/*.js'],
+      dest: '/app.min.js' 
+    }
+  }
+});
+```
 
 ## How does it works
 
 Coming soon.
 
-## Example
+## Examples
 
 ### CLI tool example
 
@@ -44,13 +68,13 @@ Coming soon.
 var UglifyJS    = require('uglify-js'),
     saveLicense = require('uglify-save-license');
 
-var result = UglifyJS.minify(process.argv[2], {
+var minified = UglifyJS.minify(process.argv[2], {
   output: {
     comments: saveLicense
   }
 }).code;
 
-console.log(result);
+console.log(minified);
 ```
 
 #### Target uncompressed file
