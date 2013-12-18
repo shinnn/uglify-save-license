@@ -4,7 +4,8 @@
   "description": "Tiny license detector module for UglifyJS's 'comments' option",
   "main": "uglify-save-license.js",
   "scripts": {
-    "test": "node_modules/grunt-cli/bin/grunt test"
+    "test": "node_modules/grunt-cli/bin/grunt test",
+    "postinstall": "node_modules/grunt-cli/bin/grunt build"
   },
   "repository": {
     "type": "git",

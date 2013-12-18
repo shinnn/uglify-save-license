@@ -36,13 +36,59 @@ Coming soon.
 
 ### CLI tool example
 
-Coming soon.
+#### Program (`uglify-example.js`)
+
+```javascript
+#!/usr/bin/env node
+
+var UglifyJS    = require('uglify-js'),
+    saveLicense = require('uglify-save-license');
+
+var result = UglifyJS.minify(process.argv[2], {
+  output: {
+    comments: saveLicense
+  }
+}).code;
+
+console.log(result);
+```
+
+#### Target uncompressed file
+
+```javascript
+// example.js
+
+// (c) John Smith | MIT License
+// http://examplelibrary.com/
+
+// anonymous function
+(function(win, doc){
+  var string = 'Hello World! :' + doc.title;
+
+  // output greeting message
+  console.log(string);
+}(window, document));
+```
+
+#### Command
+
+```
+node uglify-example.js [TARGET_FILE_NAME]
+```
+
+#### Output
+
+```javascript
+// example.js
+// (c) John Smith | MIT License
+// http://examplelibrary.com/
+!function(o,l){var n="Hello World! :"+l.title;console.log(n)}(window,document);
+```
 
 ### [Gruntfile](http://gruntjs.com/getting-started#the-gruntfile) example
 
 ```coffeescript
 module.exports = (grunt) ->
-  'use strict'
 
   grunt.loadNpmTasks 'grunt-contrib-uglify'
   grunt.loadNpmTasks 'grunt-contrib-concat'
@@ -71,11 +117,7 @@ module.exports = (grunt) ->
     clean:
       tmpfiles: ['tmp']
 
-  grunt.registerTask 'default' [
-    'uglify'
-    'concat'
-    'clean'
-  ]
+  grunt.registerTask 'default' ['uglify', 'concat', 'clean']
 ```
 
 ## License

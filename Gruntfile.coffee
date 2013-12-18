@@ -13,10 +13,11 @@ module.exports = (grunt) ->
   grunt.initConfig
     jshint:
       options:
-        strict: true
-        node: true
+        camelcase: true
+        trailing: true
         indent: 2
-        unused: true
+        browser: false
+        node: true
       main:
         files:
           src: ['uglify-save-license.js']
@@ -27,7 +28,7 @@ module.exports = (grunt) ->
     watch:
       main:
         files: ['uglify-save-license.js']
-        tasks: ['jshint']
+        tasks: ['build']
     
     replace:
       main:

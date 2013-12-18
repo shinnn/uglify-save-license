@@ -24,7 +24,7 @@ module.exports = function saveLicense(node, comment) {
   
   if (result) {
     // if the comment contains license, save line number
-    prevCommentLine = comment.line;    
+    prevCommentLine = comment.line;
   } else {
     // if the comment doesn't contain license, reset line number
     prevCommentLine = 0;

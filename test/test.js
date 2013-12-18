@@ -3,7 +3,7 @@
 var path = require('path');
 var grunt = require('grunt');
 
-var files = grunt.file.expandMapping(
+var files = grunt.file.expandMapping (
   '{,*/}*.js',
   'test/expected',
   { cwd: 'test/actual' }
