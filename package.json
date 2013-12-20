@@ -20,6 +20,7 @@
   "keywords": [
     "uglify",
     "compression",
+    "minification",
     "comment",
     "license"
   ],

@@ -18,7 +18,7 @@ npm install uglify-save-license
 
 First of all, load the `uglify-save-license` module.
 
-```javacript
+```javascript
 var saveLicense = require('uglify-save-license');
 ```
 
@@ -45,8 +45,8 @@ grunt.initConfig({
       options: {
         preserveComments: saveLicense
       },    
-      src: ['src/**/*.js'],
-      dest: '/app.min.js' 
+      src: ['src/app.js'],
+      dest: 'dest/app.min.js' 
     }
   }
 });
