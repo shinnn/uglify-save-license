@@ -60,7 +60,7 @@ Coming soon.
 
 ### CLI tool example
 
-#### Program (`uglify-example.js`)
+#### Main script (`uglify-example.js`)
 
 ```javascript
 #!/usr/bin/env node

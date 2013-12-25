@@ -9,17 +9,17 @@ var files = grunt.file.expandMapping (
   { cwd: 'test/actual' }
 );
 
-function exportTests(map) {
+function exportTests (map) {
   var basename = path.basename(map.src);
   
   var actual = grunt.file.read(map.src);
   var expected = grunt.file.read(map.dest);
 
-  exports[basename] = function(test) {
+  exports[basename] = function (test) {
     test.strictEqual(
       actual,
       expected,
-      basename + " is not uglified to the expected output."
+      basename + " is not uglified as the expected output."
     );
     test.done();
   };
