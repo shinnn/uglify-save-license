@@ -5,24 +5,24 @@
 [![devDependency Status](https://david-dm.org/shinnn/uglify-save-license/dev-status.png)](https://david-dm.org/shinnn/uglify-save-license#info=devDependencies)
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/shinnn/uglify-save-license/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
-Tiny license detector module for UglifyJS
+Tiny license detector for UglifyJS
 
 ## Overview
 
-This module enable us to preserve license comments when using UglifyJS.
+This module enables us to preserve license comments when using [UglifyJS](http://lisperator.net/uglifyjs/).
 
 Even if the license statement is in multiple line comments, or the comment has no directive such as `@license` and `/*!`, this module keeps them readable.
 
-*uglify-save-license* is inspired by [grunt-license-saver](https://github.com/kyo-ago/grunt-license-saver) and I use it as reference.
+*uglify-save-license* is inspired by [grunt-license-saver](https://github.com/kyo-ago/grunt-license-saver) and I used it as reference.
 Thanks, [kyo-ago](https://github.com/kyo-ago).
 
 ## Installation
 
-Install [Node](http://nodejs.org/) and run this command in the root of your project:
-
 ```
 npm install uglify-save-license
 ```
+
+Make sure you have installed [Node](http://nodejs.org/) before running this command.
 
 ## Usage
 
@@ -64,7 +64,12 @@ grunt.initConfig({
 
 ## How does it works
 
-Coming soon.
+*uglify-save-license* checks each comment node of JavaScript file.
+The comment will be regarded as a license statement and preserved after compression, if it meets at least one of the following requirements:
+
+1. The comment is in the first line of a file.
+2. The regular expression for license statements matches the comment string. The regexp matches, for example, `MIT` and `Copyright`. (See [the source code](./uglify-save-license.js) for details.)
+3. There is a comment at the previous line, and it matches 1. 2. or 3.
 
 ## Examples
 
@@ -90,16 +95,16 @@ console.log(minified);
 #### Target file
 
 ```javascript
-// example.js
+// First line
 
-// (c) John Smith | MIT License
-// http://examplelibrary.com/
+// (c) 2014 John  <- contains '(c)'
+// The previous line is preserved
 
-// anonymous function
+// This line won't be preserved.
 (function(win, doc) {
   var str = 'Hello World! :' + doc.title;
 
-  // output greeting message
+  // This line will not, too.
   console.log(str);
 }(window, document));
 ```
@@ -113,9 +118,9 @@ node uglify-example.js <target filename>
 #### Output
 
 ```javascript
-// example.js
-// (c) John Smith | MIT License
-// http://examplelibrary.com/
+// First line
+// (c) 2014 John  <- contains '(c)'
+// The previous line is preserved
 !function(o,l){var n="Hello World! :"+l.title;console.log(n)}(window,document);
 ```
 
@@ -142,12 +147,12 @@ module.exports = (grunt) ->
         ]
 
     concat:
-      script:
+      js:
         src: ['tmp/*.js']
         dest: 'path/to/build/app.js'
 
     clean:
-      tmpfiles: ['tmp']
+      tmpdir: ['tmp']
 
   grunt.registerTask 'default' ['uglify', 'concat', 'clean']
 ```
