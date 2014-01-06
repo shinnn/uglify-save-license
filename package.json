@@ -1,6 +1,6 @@
 {
   "name": "uglify-save-license",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Tiny license detector module for UglifyJS's 'comments' option",
   "main": "uglify-save-license.js",
   "scripts": {
