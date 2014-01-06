@@ -5,7 +5,16 @@
 [![devDependency Status](https://david-dm.org/shinnn/uglify-save-license/dev-status.png)](https://david-dm.org/shinnn/uglify-save-license#info=devDependencies)
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/shinnn/uglify-save-license/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
-Tiny license detector module for the `comments` option of UglifyJS
+Tiny license detector module for UglifyJS
+
+## Overview
+
+This module enable us to preserve license comments when using UglifyJS.
+
+Even if the license statement is in multiple line comments, or the comment has no directive such as `@license` and `/*!`, this module keeps them readable.
+
+*uglify-save-license* is inspired by [grunt-license-saver](https://github.com/kyo-ago/grunt-license-saver) and I use it as reference.
+Thanks, [kyo-ago](https://github.com/kyo-ago).
 
 ## Installation
 
@@ -78,7 +87,7 @@ var minified = UglifyJS.minify(process.argv[2], {
 console.log(minified);
 ```
 
-#### Target uncompressed file
+#### Target file
 
 ```javascript
 // example.js
@@ -87,18 +96,18 @@ console.log(minified);
 // http://examplelibrary.com/
 
 // anonymous function
-(function(win, doc){
-  var string = 'Hello World! :' + doc.title;
+(function(win, doc) {
+  var str = 'Hello World! :' + doc.title;
 
   // output greeting message
-  console.log(string);
+  console.log(str);
 }(window, document));
 ```
 
 #### Command
 
 ```
-node uglify-example.js [TARGET_FILE_NAME]
+node uglify-example.js <target filename>
 ```
 
 #### Output
@@ -110,7 +119,7 @@ node uglify-example.js [TARGET_FILE_NAME]
 !function(o,l){var n="Hello World! :"+l.title;console.log(n)}(window,document);
 ```
 
-### [Gruntfile](http://gruntjs.com/getting-started#the-gruntfile) example
+### [Gruntfile.coffee](http://gruntjs.com/getting-started#the-gruntfile) example
 
 ```coffeescript
 module.exports = (grunt) ->
@@ -119,13 +128,11 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-concat'
   grunt.loadNpmTasks 'grunt-contrib-clean'
   
-  saveLicense = require 'uglify-save-license'
-
   grunt.initConfig
     uglify:
       target:
         options:
-          preserveComments: saveLicense
+          preserveComments: require 'uglify-save-license'
         files: [
           expand: true
           flatten: true
@@ -147,6 +154,6 @@ module.exports = (grunt) ->
 
 ## License
 
-Copyright (c) 2013 [Shinnosuke Watanabe](https://github.com/shinnn) All rights reserved.
+Copyright (c) 2013 - 2014 [Shinnosuke Watanabe](https://github.com/shinnn) All rights reserved.
 
 Licensed under the [MIT license](http://opensource.org/licenses/mit-license.php).
