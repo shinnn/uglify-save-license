@@ -37,6 +37,7 @@
     "grunt-contrib-nodeunit": "~0.2.2",
     "grunt-release": "~0.6.0",
     "grunt-replace": "~0.5.1",
-    "semver": "~2.2.1"
+    "semver": "~2.2.1",
+    "grunt-contrib-clean": "~0.5.0"
   }
 }

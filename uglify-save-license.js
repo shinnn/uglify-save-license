@@ -1,4 +1,4 @@
-// uglify-save-license.js v0.1.2
+// uglify-save-license.js v0.1.3
 // Copyright (c) 2013 Shinnosuke Watanabe
 // Licensed uder the MIT license
 
@@ -13,7 +13,7 @@ var prevCommentLine = 0;
 var prevFile = '';
 
 module.exports = function saveLicense(node, comment) {
-  if(comment.file !== prevFile) {
+  if (comment.file !== prevFile) {
     prevCommentLine = 0;
   }
 
