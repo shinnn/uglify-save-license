@@ -30,12 +30,21 @@ module.exports = (grunt) ->
         src: ['test/actual/*.js']
     
     replace:
-      main:
+      version:
         options:
-          prefix: 'v'
+          prefix: ' v'
           patterns: [
             match: pkg.version
-            replacement: "v#{ getNextVersion() }"
+            replacement: " v#{ getNextVersion() }"
+          ]
+        files:
+          'uglify-save-license.js': ['uglify-save-license.js']
+      year:
+        options:
+          prefix: '2013 - '
+          patterns: [
+            match: "#{ new Date().getFullYear() - 1 }"
+            replacement: "2013 - #{ new Date().getFullYear() }"
           ]
         files:
           'uglify-save-license.js': ['uglify-save-license.js']
