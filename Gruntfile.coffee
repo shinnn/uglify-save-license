@@ -23,7 +23,7 @@ module.exports = (grunt) ->
           src: ['uglify-save-license.js']
       test:
         files:
-          src: ['test/test.js']
+          src: '<%= nodeunit.all %>'
     
     clean:
       test:
@@ -62,7 +62,8 @@ module.exports = (grunt) ->
           dest: 'test/actual'
         ]
     
-    nodeunit: ['test/test.js']
+    nodeunit:
+      all: ['test/test.js']
 
     watch:
       main:
