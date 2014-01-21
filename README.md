@@ -13,9 +13,6 @@ This module enables us to preserve license comments when using [UglifyJS](http:/
 
 Even if the license statement is in multiple line comments, or the comment has no directive such as `@license` and `/*!`, this module keeps them readable.
 
-*uglify-save-license* is inspired by [grunt-license-saver](https://github.com/kyo-ago/grunt-license-saver) and I used it as reference.
-Thanks, [kyo-ago](https://github.com/kyo-ago).
-
 ## Installation
 
 ```
@@ -26,7 +23,7 @@ Make sure you have installed [Node](http://nodejs.org/) before running this comm
 
 ## Usage
 
-First of all, load the `uglify-save-license` module.
+First of all, load `uglify-save-license` module.
 
 ```javascript
 var saveLicense = require('uglify-save-license');
@@ -156,6 +153,11 @@ module.exports = (grunt) ->
 
   grunt.registerTask 'default' ['uglify', 'concat', 'clean']
 ```
+
+## Acknowledgements
+
+*uglify-save-license* is inspired by [grunt-license-saver](https://github.com/kyo-ago/grunt-license-saver) and I used it as reference.
+Thanks, [kyo-ago](https://github.com/kyo-ago).
 
 ## License
 
