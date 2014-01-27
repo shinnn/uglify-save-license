@@ -15,6 +15,8 @@ Even if the license statement is in multiple line comments, or the comment has n
 
 ## Installation
 
+Install via [npm](https://npmjs.org/).
+
 ```
 npm install uglify-save-license
 ```
