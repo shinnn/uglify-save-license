@@ -5,7 +5,7 @@
 [![devDependency Status](https://david-dm.org/shinnn/uglify-save-license/dev-status.png)](https://david-dm.org/shinnn/uglify-save-license#info=devDependencies)
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/shinnn/uglify-save-license/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
-Tiny license detector for UglifyJS
+License detector for UglifyJS
 
 ## Overview
 
@@ -61,14 +61,14 @@ grunt.initConfig({
 });
 ```
 
-## How does it works
+## How it works
 
-*uglify-save-license* checks each comment node of JavaScript file.
+*uglify-save-license* checks each [comment token](http://lisperator.net/uglifyjs/ast#tokens) of JavaScript file.
 The comment will be regarded as a license statement and preserved after compression, if it meets at least one of the following requirements:
 
-1. The comment is in the first line of a file.
+1. The comment is in the *first* line of a file.
 2. [The regexp for license statement](./uglify-save-license.js#L8) matches the string of the comment. The regexp matches, for example, `MIT` and `Copyright`.
-3. There is a comment at the previous line, and it matches 1. 2. or 3.
+3. There is a comment at the *previous* line, and it matches 1. 2. or 3.
 
 ## Examples
 
@@ -141,7 +141,7 @@ module.exports = (grunt) ->
           expand: true
           flatten: true
           cwd: 'path/to/src'
-          src: ["**/*.js"]
+          src: ['**/*.js']
           dest: 'tmp/'
         ]
 
@@ -165,4 +165,4 @@ Thanks, [kyo-ago](https://github.com/kyo-ago).
 
 Copyright (c) 2013 - 2014 [Shinnosuke Watanabe](https://github.com/shinnn) All rights reserved.
 
-Licensed under the [MIT license](http://opensource.org/licenses/mit-license.php).
+Licensed under [the MIT license](./LICENSE).
