@@ -1,2 +1,3 @@
 .travis.yml
-test/actual/
+Gruntfile.coffee
+test/
