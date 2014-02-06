@@ -33,18 +33,20 @@ module.exports = (grunt) ->
       version:
         options:
           prefix: ' v'
+          preservePrefix: true
           patterns: [
             match: pkg.version
-            replacement: " v#{ getNextVersion() }"
+            replacement: getNextVersion()
           ]
         files:
           'uglify-save-license.js': ['uglify-save-license.js']
       year:
         options:
           prefix: '2013 - '
+          excludePrefix: true
           patterns: [
             match: "#{ new Date().getFullYear() - 1 }"
-            replacement: "2013 - #{ new Date().getFullYear() }"
+            replacement: "#{ new Date().getFullYear() }"
           ]
         files:
           'uglify-save-license.js': ['uglify-save-license.js']
@@ -52,7 +54,7 @@ module.exports = (grunt) ->
     uglify:
       options:
         preserveComments: ->
-          args = Array::slice.call arguments, 0
+          args = grunt.util.toArray arguments
           require('./uglify-save-license.js') args...
       fixture:
         files: [
