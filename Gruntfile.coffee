@@ -1,7 +1,7 @@
 module.exports = (grunt) ->
   'use strict'
 
-  require('load-grunt-tasks')(grunt)
+  require('load-grunt-tasks') grunt
   semver = require 'semver'
   
   pkg = grunt.file.readJSON 'package.json'
