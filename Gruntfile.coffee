@@ -43,7 +43,7 @@ module.exports = (grunt) ->
       year:
         options:
           prefix: '2013 - '
-          excludePrefix: true
+          preservePrefix: true
           patterns: [
             match: "#{ new Date().getFullYear() - 1 }"
             replacement: "#{ new Date().getFullYear() }"
