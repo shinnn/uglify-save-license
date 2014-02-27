@@ -1,11 +1,11 @@
-// uglify-save-license.js v0.2.3
+// uglify-save-license.js v0.3.0
 // Copyright (c) 2013 - 2014 Shinnosuke Watanabe
 // Licensed uder the MIT license
 
 'use strict';
 
 // regexp to determine whether the comment looks like license text.
-var licenseRegexp = /^\!|^@preserve|^@cc_on|\bMIT\b|\bMPL\b|\bGPL\b|\bBSD\b|\(c\)|License|Copyright/mi;
+var licenseRegexp = /^\!|^@preserve|^@cc_on|\bMIT\b|\bMPL\b|\bGPL\b|\bBSD\b|\bISCL\b|\(c\)|License|Copyright/mi;
 
 // number of line where license comment appeared last
 var prevCommentLine = 0;
