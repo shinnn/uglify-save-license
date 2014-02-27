@@ -30,7 +30,7 @@
   "homepage": "https://github.com/shinnn/uglify-save-license",
   "devDependencies": {
     "grunt": "~0.4.2",
-    "load-grunt-tasks": "~0.3.0",
+    "load-grunt-tasks": "^0.4.0",
     "grunt-contrib-jshint": "~0.8.0",
     "grunt-contrib-watch": "~0.5.3",
     "grunt-contrib-uglify": "~0.3.2",
