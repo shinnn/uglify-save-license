@@ -1,11 +1,11 @@
-// uglify-save-license.js v0.3.0
+// uglify-save-license.js v0.4.0
 // Copyright (c) 2013 - 2014 Shinnosuke Watanabe
 // Licensed uder the MIT license
 
 'use strict';
 
 // regexp to determine whether the comment looks like license text.
-var licenseRegexp = /^\!|^@preserve|^@cc_on|\bMIT\b|\bMPL\b|\bGPL\b|\bBSD\b|\bISCL\b|\(c\)|License|Copyright/mi;
+var licenseRegexp = /@preserve|@cc_on|\bMIT\b|\bMPL\b|\bGPL\b|\bBSD\b|\bISCL\b|\(c\)|License|Copyright/mi;
 
 // number of line where license comment appeared last
 var prevCommentLine = 0;
@@ -19,6 +19,8 @@ module.exports = function saveLicense(node, comment) {
 
   // check if the comment contains license text
   var result = licenseRegexp.test(comment.value) ||
+               (comment.type === 'comment2' &&
+                comment.value.charAt(0) === '!') ||
                comment.line === 1 ||
                comment.line === prevCommentLine + 1;
   
