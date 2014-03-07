@@ -1,6 +1,6 @@
 {
   "name": "uglify-save-license",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "License detector for UglifyJS",
   "main": "uglify-save-license.js",
   "scripts": {
