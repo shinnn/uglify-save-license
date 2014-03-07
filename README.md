@@ -62,11 +62,11 @@ grunt.initConfig({
 
 ## How it works
 
-*uglify-save-license* checks each [comment token](http://lisperator.net/uglifyjs/ast#tokens) of JavaScript file.
+*uglify-save-license* checks each [comment token](http://lisperator.net/uglifyjs/ast#tokens) of a JavaScript file.
 The comment will be regarded as a license statement and preserved after compression, if it meets at least one of the following requirements:
 
 1. The comment is in the *first* line of a file.
-2. [The regexp for license statement](./uglify-save-license.js#L8) matches the string of the comment. The regexp matches, for example, `MIT` and `Copyright`.
+2. [The regexp for license statement](./uglify-save-license.js#L8) matches the string of the comment. It matches, for example, `MIT` and `Copyright`.
 3. There is a comment at the *previous* line, and it matches 1. 2. or 3.
 
 ## Examples
@@ -162,6 +162,6 @@ Thanks, [kyo-ago](https://github.com/kyo-ago).
 
 ## License
 
-Copyright (c) 2013 - 2014 [Shinnosuke Watanabe](https://github.com/shinnn) All rights reserved.
+Copyright (c) 2013 - 2014 [Shinnosuke Watanabe](https://github.com/shinnn)
 
 Licensed under [the MIT license](./LICENSE).
