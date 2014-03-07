@@ -65,6 +65,8 @@ module.exports = (grunt) ->
         ]
     
     nodeunit:
+      options:
+        reporter: 'default'
       all: ['test/test.js']
 
     watch:
