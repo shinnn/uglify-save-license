@@ -1,4 +1,4 @@
-// uglify-save-license.js v0.4.0
+// uglify-save-license.js v0.4.1
 // Copyright (c) 2013 - 2014 Shinnosuke Watanabe
 // Licensed uder the MIT license
 
