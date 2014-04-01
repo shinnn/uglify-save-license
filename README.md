@@ -1,10 +1,10 @@
 # uglify-save-license
 
-[![NPM version](https://badge.fury.io/js/uglify-save-license.png)](http://badge.fury.io/js/uglify-save-license)
-[![Build Status](https://travis-ci.org/shinnn/uglify-save-license.png?branch=master)](https://travis-ci.org/shinnn/uglify-save-license)
-[![devDependency Status](https://david-dm.org/shinnn/uglify-save-license/dev-status.png)](https://david-dm.org/shinnn/uglify-save-license#info=devDependencies)
+[![NPM version](https://badge.fury.io/js/uglify-save-license.svg)](http://badge.fury.io/js/uglify-save-license)
+[![Build Status](https://travis-ci.org/shinnn/uglify-save-license.svg)](https://travis-ci.org/shinnn/uglify-save-license)
+[![devDependency Status](https://david-dm.org/shinnn/uglify-save-license/dev-status.svg?theme=shields.io)](https://david-dm.org/shinnn/uglify-save-license#info=devDependencies)
 
-Detect and preserve license comments at JavaScript compression with [UglifyJS](http://lisperator.net/uglifyjs/) 
+A support module for [UglifyJS](http://lisperator.net/uglifyjs/) to detect and preserve license comments
 
 ```javascript
 //     Backbone.js 1.1.2
@@ -41,13 +41,11 @@ Even if the license statement is in multiple line comments, or the comment has n
 
 ## Installation
 
-Install via [npm](https://npmjs.org/).
+Install with [npm](https://npmjs.org/). (Make sure you have installed [Node](http://nodejs.org/download/).)
 
 ```
 npm install uglify-save-license
 ```
-
-Make sure you have installed [Node](http://nodejs.org/) before running this command.
 
 ## Usage
 
