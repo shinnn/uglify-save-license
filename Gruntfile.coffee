@@ -13,11 +13,7 @@ module.exports = (grunt) ->
   grunt.initConfig
     jshint:
       options:
-        camelcase: true
-        trailing: true
-        indent: 2
-        browser: false
-        node: true
+        jshintrc: '.jshintrc'
       main:
         files:
           src: ['uglify-save-license.js']
