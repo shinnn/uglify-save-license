@@ -2,7 +2,7 @@
 
 [![NPM version](https://badge.fury.io/js/uglify-save-license.svg)](http://badge.fury.io/js/uglify-save-license)
 [![Build Status](https://travis-ci.org/shinnn/uglify-save-license.svg)](https://travis-ci.org/shinnn/uglify-save-license)
-[![devDependency Status](https://david-dm.org/shinnn/uglify-save-license/dev-status.svg?theme=shields.io)](https://david-dm.org/shinnn/uglify-save-license#info=devDependencies)
+[![devDependency Status](https://david-dm.org/shinnn/uglify-save-license/dev-status.svg)](https://david-dm.org/shinnn/uglify-save-license#info=devDependencies)
 
 A support module for [UglifyJS](http://lisperator.net/uglifyjs/) to detect and preserve license comments
 
