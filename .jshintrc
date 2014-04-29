@@ -1,7 +1,7 @@
 {
   "camelcase": true,
-  "trailing": true,
   "indent": 2,
-  "node": true,
-  "browser": false
+  "quotmark": "single",
+  "browser": false,
+  "node": true
 }
