@@ -4,7 +4,6 @@
 
 'use strict';
 
-// regexp to determine whether the comment looks like license text.
 var licenseRegexp = /@preserve|@cc_on|\bMIT\b|\bMPL\b|\bGPL\b|\bBSD\b|\bISCL\b|\(c\)|License|Copyright/mi;
 
 // number of line where license comment appeared last
@@ -17,23 +16,19 @@ module.exports = function saveLicense(node, comment) {
     prevCommentLine = 0;
   }
 
-  // check if the comment contains license text
-  var result = licenseRegexp.test(comment.value) ||
-               (comment.type === 'comment2' &&
-                comment.value.charAt(0) === '!') ||
-               comment.line === 1 ||
-               comment.line === prevCommentLine + 1;
+  var isLicense = licenseRegexp.test(comment.value) ||
+                  (comment.type === 'comment2' &&
+                  comment.value.charAt(0) === '!') ||
+                  comment.line === 1 ||
+                  comment.line === prevCommentLine + 1;
   
-  if (result) {
-    // if the comment contains license, save line number
+  if (isLicense) {
     prevCommentLine = comment.line;
   } else {
-    // if the comment doesn't contain license, reset line number
     prevCommentLine = 0;
   }
   
-  // save current filename
   prevFile = comment.file;
   
-  return result;
+  return isLicense;
 };

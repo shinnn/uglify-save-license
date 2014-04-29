@@ -70,8 +70,7 @@ module.exports = (grunt) ->
         files: ['uglify-save-license.js']
         tasks: ['build']
     
-    release:
-      options: {}
+    release: {}
 
   grunt.registerTask 'test', [
     'jshint'
