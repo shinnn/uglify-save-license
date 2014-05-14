@@ -5,6 +5,7 @@ module.exports = (grunt) ->
   semver = require 'semver'
   
   pkg = grunt.file.readJSON 'package.json'
+  MAIN = pkg.main
   
   getNextVersion = ->
     currentVer = pkg.version
@@ -16,7 +17,7 @@ module.exports = (grunt) ->
         jshintrc: '.jshintrc'
       main:
         files:
-          src: ['uglify-save-license.js']
+          src: [MAIN]
       test:
         files:
           src: '<%= nodeunit.all %>'
@@ -34,8 +35,8 @@ module.exports = (grunt) ->
             match: pkg.version
             replacement: getNextVersion()
           ]
-        files:
-          'uglify-save-license.js': ['uglify-save-license.js']
+        src: [MAIN]
+        dest: MAIN
       year:
         options:
           prefix: '2013 - '
@@ -44,14 +45,13 @@ module.exports = (grunt) ->
             match: "#{ new Date().getFullYear() - 1 }"
             replacement: "#{ new Date().getFullYear() }"
           ]
-        files:
-          'uglify-save-license.js': ['uglify-save-license.js']
+        src: [MAIN]
+        dest: MAIN
     
     uglify:
       options:
         preserveComments: ->
-          args = grunt.util.toArray arguments
-          require('./uglify-save-license.js') args...
+          require(MAIN) arguments...
       fixture:
         files: [
           expand: true
@@ -67,7 +67,7 @@ module.exports = (grunt) ->
 
     watch:
       main:
-        files: ['uglify-save-license.js']
+        files: [MAIN]
         tasks: ['build']
     
     release: {}
@@ -80,7 +80,5 @@ module.exports = (grunt) ->
   ]
 
   grunt.registerTask 'build', ['replace', 'test']
-  
   grunt.registerTask 'default', ['build', 'watch']
-
   grunt.registerTask 'publish', ['build', 'release:patch']
