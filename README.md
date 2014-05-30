@@ -94,6 +94,11 @@ The comment will be regarded as a license statement and preserved after compress
 2. [The regexp for license statement](./uglify-save-license.js#L7) matches the string of the comment. It matches, for example, `MIT` and `Copyright`.
 3. There is a comment at the *previous* line, and it matches 1. 2. or 3.
 
+## Used by
+
+* [Blanket.js](https://github.com/alex-seville/blanket) ([Alex Seville](https://github.com/alex-seville))
+* [gulp plugins](https://github.com/gulpjs/plugins) ([Robin Böhm](https://github.com/robinboehm), [Max Ovsiankin](https://github.com/gratimax))
+
 ## Examples
 
 ### CLI tool example
