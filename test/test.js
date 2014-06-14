@@ -11,11 +11,11 @@ var files = grunt.file.expandMapping (
 
 function exportTests (map) {
   var basename = path.basename(map.src);
-  
+
   exports[basename] = function (test) {
     var actual = grunt.file.read(map.src);
     var expected = grunt.file.read(map.dest);
-    
+
     test.strictEqual(
       actual,
       expected

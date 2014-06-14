@@ -3,14 +3,14 @@ module.exports = (grunt) ->
 
   require('load-grunt-tasks') grunt
   semver = require 'semver'
-  
+
   pkg = grunt.file.readJSON 'package.json'
   MAIN = pkg.main
-  
+
   getNextVersion = ->
     currentVer = pkg.version
     semver.inc currentVer, 'patch'
-      
+
   grunt.initConfig
     jshint:
       options:
@@ -21,11 +21,11 @@ module.exports = (grunt) ->
       test:
         files:
           src: '<%= nodeunit.all %>'
-    
+
     clean:
       test:
         src: ['test/actual/*.js']
-    
+
     replace:
       version:
         options:
@@ -47,7 +47,7 @@ module.exports = (grunt) ->
           ]
         src: [MAIN]
         dest: MAIN
-    
+
     uglify:
       options:
         preserveComments: ->
@@ -59,7 +59,7 @@ module.exports = (grunt) ->
           src: '{,*/}*.js'
           dest: 'test/actual'
         ]
-    
+
     nodeunit:
       options:
         reporter: 'default'
@@ -69,7 +69,7 @@ module.exports = (grunt) ->
       main:
         files: [MAIN]
         tasks: ['build']
-    
+
     release: {}
 
   grunt.registerTask 'test', [

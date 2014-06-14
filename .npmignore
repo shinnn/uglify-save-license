@@ -1,4 +1,5 @@
-.travis.yml
+.editorconfig
 .jshintrc
+.travis.yml
 Gruntfile.coffee
 test/

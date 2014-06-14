@@ -21,14 +21,14 @@ module.exports = function saveLicense(node, comment) {
                   comment.value.charAt(0) === '!') ||
                   comment.line === 1 ||
                   comment.line === prevCommentLine + 1;
-  
+
   if (isLicense) {
     prevCommentLine = comment.line;
   } else {
     prevCommentLine = 0;
   }
-  
+
   prevFile = comment.file;
-  
+
   return isLicense;
 };
