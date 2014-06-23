@@ -97,6 +97,7 @@ The comment will be regarded as a license statement and preserved after compress
 ## Used by
 
 * [Blanket.js](https://github.com/alex-seville/blanket) ([Alex Seville](https://github.com/alex-seville))
+* [generator-gulp-angular](https://github.com/Swiip/generator-gulp-angular) ([Matthieu Lux](https://github.com/Swiip))
 * [gulp plugins](https://github.com/gulpjs/plugins) ([Robin Böhm](https://github.com/robinboehm), [Max Ovsiankin](https://github.com/gratimax))
 
 ## Examples
