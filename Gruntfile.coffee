@@ -1,57 +1,22 @@
 module.exports = (grunt) ->
   'use strict'
 
-  require('load-grunt-tasks') grunt
-  semver = require 'semver'
-
-  pkg = grunt.file.readJSON 'package.json'
-  MAIN = pkg.main
-
-  getNextVersion = ->
-    currentVer = pkg.version
-    semver.inc currentVer, 'patch'
+  require('jit-grunt') grunt
 
   grunt.initConfig
     jshint:
       options:
         jshintrc: '.jshintrc'
-      main:
-        files:
-          src: [MAIN]
-      test:
-        files:
-          src: '<%= nodeunit.all %>'
+      main: ['index.js']
+      test: '<%= nodeunit.all %>'
 
     clean:
-      test:
-        src: ['test/actual/*.js']
-
-    replace:
-      version:
-        options:
-          prefix: ' v'
-          preservePrefix: true
-          patterns: [
-            match: pkg.version
-            replacement: getNextVersion()
-          ]
-        src: [MAIN]
-        dest: MAIN
-      year:
-        options:
-          prefix: '2013 - '
-          preservePrefix: true
-          patterns: [
-            match: "#{ new Date().getFullYear() - 1 }"
-            replacement: "#{ new Date().getFullYear() }"
-          ]
-        src: [MAIN]
-        dest: MAIN
+      test: ['test/actual/*.js']
 
     uglify:
       options:
         preserveComments: ->
-          require(MAIN) arguments...
+          require('./') arguments...
       fixture:
         files: [
           expand: true
@@ -67,10 +32,8 @@ module.exports = (grunt) ->
 
     watch:
       main:
-        files: [MAIN]
+        files: ['index.js']
         tasks: ['build']
-
-    release: {}
 
   grunt.registerTask 'test', [
     'jshint'
@@ -79,6 +42,4 @@ module.exports = (grunt) ->
     'nodeunit'
   ]
 
-  grunt.registerTask 'build', ['replace', 'test']
-  grunt.registerTask 'default', ['build', 'watch']
-  grunt.registerTask 'publish', ['build', 'release:patch']
+  grunt.registerTask 'default', ['test', 'watch']

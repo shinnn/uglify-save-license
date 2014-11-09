@@ -17,8 +17,7 @@ module.exports = function saveLicense(node, comment) {
   }
 
   var isLicense = licenseRegexp.test(comment.value) ||
-                  (comment.type === 'comment2' &&
-                  comment.value.charAt(0) === '!') ||
+                  (comment.type === 'comment2' && comment.value.charAt(0) === '!') ||
                   comment.line === 1 ||
                   comment.line === prevCommentLine + 1;
 

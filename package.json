@@ -2,9 +2,12 @@
   "name": "uglify-save-license",
   "version": "0.4.1",
   "description": "License detector for UglifyJS",
-  "main": "./uglify-save-license.js",
+  "files": [
+    "index.js",
+    "LICENSE"
+  ],
   "scripts": {
-    "test": "grunt build"
+    "test": "grunt test"
   },
   "repository": {
     "type": "git",
@@ -38,14 +41,11 @@
   "homepage": "https://github.com/shinnn/uglify-save-license",
   "devDependencies": {
     "grunt": "^0.4.5",
-    "load-grunt-tasks": "^0.6.0",
+    "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-jshint": "^0.10.0",
-    "grunt-contrib-watch": "^0.6.1",
-    "grunt-contrib-uglify": "^0.5.0",
-    "grunt-contrib-clean": "^0.5.0",
     "grunt-contrib-nodeunit": "^0.4.1",
-    "grunt-release": "^0.7.0",
-    "grunt-replace": "^0.7.8",
-    "semver": "^2.3.0"
+    "grunt-contrib-uglify": "^0.6.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "jit-grunt": "^0.9.0"
   }
 }
