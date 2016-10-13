@@ -91,7 +91,7 @@ grunt.initConfig({
 The comment will be regarded as a license statement and preserved after compression, if it meets at least one of the following requirements:
 
 1. The comment is in the *first* line of a file.
-2. [The regexp for license statement](./uglify-save-license.js#L7) matches the string of the comment. It matches, for example, `MIT` and `Copyright`.
+2. [The regexp for license statement](https://github.com/shinnn/uglify-save-license/blob/451c8b0f549dbb74d62096f00b939f9c35942632/index.js#L7) matches the string of the comment. It matches, for example, `MIT` and `Copyright`.
 3. There is a comment at the *previous* line, and it matches 1. 2. or 3.
 
 ## Used by
