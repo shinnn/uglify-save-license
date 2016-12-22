@@ -1,4 +1,5 @@
 # uglify-save-license
+[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/shinnn/uglify-save-license?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 [![NPM version](https://badge.fury.io/js/uglify-save-license.svg)](http://badge.fury.io/js/uglify-save-license)
 [![Build Status](https://travis-ci.org/shinnn/uglify-save-license.svg)](https://travis-ci.org/shinnn/uglify-save-license)
